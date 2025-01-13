@@ -26,9 +26,9 @@ import xml.etree.ElementTree as ET
 import math
 import argparse
 from operator import itemgetter
-from scipy.integrate import simps
-from scipy.integrate import trapz
-from scipy.integrate import cumtrapz
+from scipy.integrate import simpson
+from scipy.integrate import trapezoid
+from scipy.integrate import cumulative_trapezoid
 
 listR = []
 
@@ -38,7 +38,7 @@ def matGen(N):
 	for ii in range(1,N+1):
 		if N % ii == 0:
 			jj = N/ii
-			for j in range(jj):
+			for j in range(int(jj)):
 				kk = np.zeros((2,2))
 				kk[0][0]=ii
 				kk[0][1]=j
@@ -130,7 +130,7 @@ def readSurf(infile):
 	for i in range(2,5):
 		chain=lines[i].split()
 		x = np.array(chain)
-		latt[i-2] = x.astype(np.float)
+		latt[i-2] = x.astype(float)
 	#Facro*Lattice
 	latt = factor * latt
     #SurfaceLatt
@@ -160,7 +160,7 @@ def calcAreasList(areaPrimTF,areaPrimSub,maxMCIA,maxAreaErr):
 				listAreas.append(dummyVec)
 			it2 = it2 +1
 		it = it +1	
- 	return listAreas;
+	return listAreas;
 
 
 def main():
