@@ -1,4 +1,4 @@
-# EpitaxyNML
+# Edited for new version of numpy and scipy! Last update: 13.01.2025
 EpitaxyNML is an application to check the commensurability between two slabs based on the paper of Zur and McGill, [J. Appl. Phys. 55 (2)](https://aip.scitation.org/doi/10.1063/1.333084)
 
 Only two POSCAR files are required as input. 
